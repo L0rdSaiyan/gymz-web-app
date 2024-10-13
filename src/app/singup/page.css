@@ -1,0 +1,12 @@
+/* page.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .formContainer {
+    @apply bg-red-500 h-full w-full; /* Certifique-se de que w-full está aqui */
+  }
+
+  
+}

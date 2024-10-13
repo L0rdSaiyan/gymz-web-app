@@ -1,0 +1,8 @@
+/* InputText.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-input {
+  @apply px-4 py-2 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-blue-500;
+}
