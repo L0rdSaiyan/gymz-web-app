@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function Header()
 {
     return (
@@ -6,10 +8,10 @@ export default function Header()
 
             <ul className="flex items-center justify-center flex-wrap overflow-auto">
               <li className="mr-4">
-                <p>Login</p>
+                <Link href="/login">Login</Link>
               </li>
               <li className="mr-4">
-                <p>Cadastrar-se</p>
+                <Link href="/singup">Cadastrar-se</Link>  
               </li>
               <li className="mr-4">
                <p>novo exercício</p>

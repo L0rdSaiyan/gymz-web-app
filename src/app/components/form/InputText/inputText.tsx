@@ -2,7 +2,7 @@ import './InputText.css';
 
 interface PropsTypes {
   text?: string;
-  eventChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  eventChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export default function InputText({ text, eventChange }: PropsTypes) {
