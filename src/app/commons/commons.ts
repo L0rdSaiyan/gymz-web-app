@@ -1,3 +1,5 @@
+import User from "../types/user";
+
 interface swalAlertAtt {
     icon: 'success' | 'error' | 'warning' | 'info' | 'question'; 
 }
@@ -12,3 +14,10 @@ export const swalAlert = (title: string, text: string, icon: swalAlertAtt['icon'
         confirmButtonText: 'Cool'
     });
 };
+
+
+export const loginUser = (user : User) => {
+
+    window.localStorage.setItem('user', JSON.stringify(user))
+
+}

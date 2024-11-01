@@ -5,6 +5,7 @@ import InputText from "../components/form/InputText/inputText";
 import SubmitBtn from "../components/form/SubmitBtn/submitBtn";
 import { handler } from "../axios/axios";
 import User from "../types/user";
+import { loginUser } from "../commons/commons";
 export default function Page() {
 
   const [userEmail, setUserEmail] = useState('');
@@ -14,7 +15,7 @@ export default function Page() {
   const handleEmailChange = (event : React.ChangeEvent<HTMLInputElement>) =>
   {
     setUserEmail(event.target.value)
-  }a
+  }
   
   const handlePasswordChange = (event : React.ChangeEvent<HTMLInputElement>) =>
   {
@@ -25,13 +26,11 @@ export default function Page() {
   {
     event.preventDefault()
     try{
-      const response = await handler.post('/get_user_by_email_password', {email:userEmail, password: userPassword})
+      const response = await handler.post('/get_user_by_email_password', {email: userEmail, password: userPassword})
       const {email, id, name, password} = response.data
-      const user = new User(name,password,id,email)
-      setUser(user)
-      console.log(user)
-      window.localStorage.setItem('user', JSON.stringify(user))
-      console.log(window.localStorage.getItem('user'))
+      const returnedUser = new User(name,password,id,email)
+      setUser(returnedUser)
+      loginUser(returnedUser)
 
     }catch(error:any)
     {
