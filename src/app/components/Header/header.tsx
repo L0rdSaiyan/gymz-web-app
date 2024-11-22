@@ -23,7 +23,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="flex justify-between bg-transparent shadow-md rounded-2xl backdrop-blur-lg w-full p-4 ">
+    <header className="flex z-10 justify-between bg-transparent shadow-md rounded-2xl backdrop-blur-lg w-full p-4 ">
       <p className="text-white text-2xl ml-4">
         Warrior<b>Z</b>
       </p>
