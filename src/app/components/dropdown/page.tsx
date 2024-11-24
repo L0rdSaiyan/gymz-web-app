@@ -9,8 +9,7 @@ interface PageProps {
 }
 
 export default function Dropdown({ user }: PageProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  
+  const [isOpen, setIsOpen] = useState(false);  
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleDropdown = () => {
