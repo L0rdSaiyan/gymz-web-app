@@ -6,7 +6,7 @@ import InputText from "../components/form/InputText/inputText";
 import SubmitBtn from "../components/form/SubmitBtn/submitBtn";
 import { handler } from "../axios/axios";
 import User from "../types/user";
-import { loginUser, swalAlert, redirect } from "../commons/commons";
+import { loginUser, swalAlert, redirect, logout } from "../commons/commons";
 import InputEmail from "../components/inputEmail/InputEmail";
 import Link from "next/link";
 
@@ -28,17 +28,20 @@ export default function Page() {
     event.preventDefault();
     swalAlert("Buscando usuário...", "Por favor, aguarde.", "info");
     try {
+      //get user info
       const response = await handler.post('/get_user_by_email_password', { email: userEmail, password: userPassword });
       const { email, id, name, password } = response.data;
-      const exercicesResponse = await handler.get(`/get_user_exercices/1`);
+      const returnedUser = new User(name, password, id, email);
+      //get user's exercices info
+      const exercicesResponse = await handler.get(`/get_user_exercices/${id}`);
       const data = exercicesResponse.data;
       console.log(data);
-      const returnedUser = new User(name, password, id, email);
-      setUser(returnedUser);
-      loginUser(returnedUser);
+      logout()
+      setUser(loginUser(returnedUser));
+      
       swalAlert(`Bem vindo, ${returnedUser._name}!`, "Login realizado", "success");
       setTimeout(() => {
-        router.push('/home');
+        redirect('/home')
       }, 3000);
     } catch (error: any) {
       swalAlert("error", "Usuário não encontrado!", "error");
