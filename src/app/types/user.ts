@@ -8,7 +8,7 @@ export class User
     _email
     _exercices
 
-    constructor(name : string, password: string, id: number, email: string, exercices? : Exercices)
+    constructor(name : string, password: string, id: number, email: string, exercices? : Exercices[])
     {
         this._name = name
         this._password = password
