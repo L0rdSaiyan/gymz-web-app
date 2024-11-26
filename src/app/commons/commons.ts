@@ -1,4 +1,4 @@
-import User from "../types/user";
+import {User} from "../types/user";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 

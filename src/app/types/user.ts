@@ -1,18 +1,23 @@
-export default class User
+import { Exercices } from "./exercices"
+
+export class User
 {
     _name
     _password
     _id
     _email
+    _exercices
 
-    constructor(name : string, password: string, id: number, email: string)
+    constructor(name : string, password: string, id: number, email: string, exercices? : Exercices)
     {
         this._name = name
         this._password = password
         this._id = id
         this._email = email
+        this._exercices = exercices || null
 
     }
+    
 
     get name()
     {
