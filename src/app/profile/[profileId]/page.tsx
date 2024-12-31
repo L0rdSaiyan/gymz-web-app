@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react";
-import User from "@/app/types/user";
+import {User} from "@/app/types/user";
 import { getActualUser } from "@/app/commons/commons";
 interface ProfileParams {
     params: {

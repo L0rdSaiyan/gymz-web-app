@@ -5,8 +5,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
+  width:100%;
+  height: 100vh;
   background-image: url('./images/banner-variation-2.jpg');
   backdrop-filter: blur(15px);
   background-position: 15%;
@@ -16,7 +16,7 @@ html, body {
 
 @media screen and (max-width: 1500px) {
   html, body {
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(15px);
     background-image: url('./images/banner.jpg');
     background-position: 75%;
     background-repeat: no-repeat;
@@ -25,9 +25,14 @@ html, body {
 
 @media screen and (max-width: 720px) and (orientation: portrait) {
   html, body {
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(15px);
     background-image: url('./images/banner-mobile.jpg');
     background-position: 50%;
+    background-color: transparent;
     background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.918);
+    backdrop-filter: blur;
+
+
   }
 }

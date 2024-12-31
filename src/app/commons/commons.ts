@@ -1,4 +1,5 @@
 import {User} from "../types/user";
+import { Exercices } from "../types/exercices";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 
@@ -44,7 +45,7 @@ export const getActualUser = () =>
     try {
         const parsedUser = JSON.parse(userData);
 
-        return new User(parsedUser._name, parsedUser._password, parsedUser._id, parsedUser._email);
+        return new User(parsedUser._name, parsedUser._password, parsedUser._id, parsedUser._email, parsedUser._exercices);
         
     } catch (error) {
         console.error('Erro ao parsear o usuário:', error);

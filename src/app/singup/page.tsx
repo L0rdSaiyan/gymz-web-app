@@ -6,7 +6,7 @@ import InputPass from "../components/form/InputPass/inputPass";
 import InputText from "../components/form/InputText/inputText";
 import SubmitBtn from "../components/form/SubmitBtn/submitBtn";
 import { useEffect, useState } from "react";
-import InputEmail from '../components/inputEmail/InputEmail';
+import InputEmail from '../components/form/inputEmail/InputEmail';
 import {User} from '../types/user';
 import { loginUser } from '../commons/commons';
 

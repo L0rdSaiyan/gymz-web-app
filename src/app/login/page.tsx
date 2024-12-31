@@ -7,7 +7,7 @@ import SubmitBtn from "../components/form/SubmitBtn/submitBtn";
 import { handler } from "../axios/axios";
 import {User} from "../types/user";
 import { loginUser, swalAlert, redirect, logout } from "../commons/commons";
-import InputEmail from "../components/inputEmail/InputEmail";
+import InputEmail from "../components/form/inputEmail/InputEmail";
 import Link from "next/link";
 import { Exercices } from "../types/exercices";
 
@@ -49,9 +49,9 @@ export default function Page() {
         logout();
         setUser(loginUser(returnedUser));
         
-        console.table(exercicesData);
-        console.table(exercicesList);
-        console.table(returnedUser);
+        console.log(exercicesData);
+        console.log(exercicesList);
+        console.log(returnedUser);
 
         swalAlert(`Bem vindo, ${returnedUser._name}!`, "Login realizado", "success");
 
