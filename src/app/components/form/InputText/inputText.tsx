@@ -1,4 +1,3 @@
-import './InputText.css';
 
 interface PropsTypes {
   text?: string;
