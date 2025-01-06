@@ -4,11 +4,11 @@ import { logout } from "@/app/commons/commons";
 import {User} from "@/app/types/user";
 import Link from "next/link";
 
-interface PageProps {
+interface PropsType {
   user: User;
 }
 
-export default function Dropdown({ user }: PageProps) {
+export default function Dropdown({ user }: PropsType) {
   const [isOpen, setIsOpen] = useState(false);  
   const dropdownRef = useRef<HTMLDivElement>(null);
 
