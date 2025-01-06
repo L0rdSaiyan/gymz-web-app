@@ -37,11 +37,12 @@ export default function Page() {
 
         const { data: exercicesData } = await handler.get(`/get_user_exercices/${userData.id}`);
 
-        // Mapeando a lista de exercícios
         const exercicesList = exercicesData.map((exercice: any) => new Exercices(
             exercice.exercice_id, exercice.name, exercice.series, exercice.repeats, exercice.days
         ));
 
+        //fazer condicionais para garantir que antes de criar uma instancia do objeto usuário, foi realmente encontrado um usuário 
+        //correspondente.
         const returnedUser = new User(
             userData.name, userData.password, userData.id, userData.email, exercicesList
         );
