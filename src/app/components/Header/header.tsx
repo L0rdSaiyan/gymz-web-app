@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import {User} from "@/app/types/user";
 import { getActualUser } from "@/app/commons/commons";
-import Dropdown from "../dropdown/page";
+import Dropdown from "../dropdown/Dropdown";
 
 export default function Header() {
   const [user, setUser] = useState<User | null>(null);

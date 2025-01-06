@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from "react";
 import { logout } from "@/app/commons/commons";
-import {User} from "@/app/types/user";
+import { User } from "@/app/types/user";
 import Link from "next/link";
 
 interface PropsType {
