@@ -33,19 +33,15 @@ export default function Home() {
       getUserExercices();
     }
   }, [user]);
-  
-  // Função para filtrar exercícios com base no dia
+
   const filterExercicesByDay = (day: string) => {
     return userExercices?.filter((exercice) => exercice.days === day) || [];
   };
 
   return (
-    <div className="w-full h-full flex justify-center items-center lg:h-screen">
-      <div className="w-full h-[80%] flex flex-col justify-center items-center sm:flex-col md:flex-col lg:flex-row xl:flex-row">
-        <Card 
-            day="Domingo" 
-            exercices={filterExercicesByDay("Domingo")} 
-        />
+    <div className="w-full h-full flex lg:h-screen">
+      <div className="w-full h-[12%] lg:h-[100%] justify-center overflow-auto flex flex-wrap">
+        <Card day="Domingo" exercices={filterExercicesByDay("Domingo")} />
         <Card
           day="Segunda-Feira"
           exercices={filterExercicesByDay("Segunda-Feira")}

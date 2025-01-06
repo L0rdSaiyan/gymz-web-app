@@ -1,20 +1,20 @@
 export class Exercices {
-    private _id;
+    private _exercice_id;
     private _name;
     private _series;
     private _repeats;
     private _days;
   
-    constructor(id: number, name: string, series: number, repeats: number, days: string) {
-      this._id = id;
+    constructor(exercice_id: number, name: string, series: number, repeats: number, days: string) {
+      this._exercice_id = exercice_id;
       this._name = name;
       this._series = series;
       this._repeats = repeats;
       this._days = days;
     }
   
-    get id() {
-      return this._id;
+    get exercice_id() {
+      return this._exercice_id;
     }
   
     get name() {
