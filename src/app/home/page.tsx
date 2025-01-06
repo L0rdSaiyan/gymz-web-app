@@ -40,7 +40,11 @@ export default function Home() {
 
   return (
     <div className="w-full h-full flex lg:h-screen">
-      <div className="w-full h-[15%] justify-center overflow-auto flex flex-wrap md:h-[30%] lg:h-[100%]">
+<div className="w-full h-[50%] justify-center overflow-auto flex flex-wrap 
+               sm:h-[40%] 
+               md:h-[30%] 
+              lg:h-[100%] 
+               xl:h-[80%] ">
         <Card day="Domingo" exercices={filterExercicesByDay("Domingo")} />
         <Card
           day="Segunda-Feira"
