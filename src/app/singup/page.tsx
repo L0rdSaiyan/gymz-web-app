@@ -17,26 +17,43 @@ export default function Signup() {
   const [userEmail, setuserEmail] = useState<string>('')
   const [user, setUser] = useState<User | null>(null)
 
-  useEffect(() => {
-  const script = document.createElement('script');
-  script.src = 'https://flexform.my.site.com/ESWBot1733322091417/assets/js/bootstrap.min.js';
-  script.onload = () => {
-    try {
-      (window as any).embeddedservice_bootstrap.settings.language = 'pt_BR';
-      (window as any).embeddedservice_bootstrap.init(
-        '00DHs000008mOna',
-        'Bot',
-        'https://flexform.my.site.com/ESWBot1733322091417',
-        {
-          scrt2URL: 'https://flexform.my.salesforce-scrt.com',
-        }
-      );
-    } catch (err) {
-      console.error('Erro ao carregar o bot:', err);
-    }
-  };
-  document.body.appendChild(script);
-}, []);
+ useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://flexform.my.site.com/ESWBot1733322091417/assets/js/bootstrap.min.js';
+    script.onload = () => {
+      try {
+        (window as any).embeddedservice_bootstrap.settings.language = 'pt_BR';
+
+        // 👇 Campos de pré-chat enviados ao bot
+        (window as any).embeddedservice_bootstrap.settings.extraPrechatFormDetails = [
+          {
+            label: 'Nome',
+            value: userName,
+            displayToAgent: true,
+            transcriptFields: ['Nome']
+          },
+          {
+            label: 'Email',
+            value: userEmail,
+            displayToAgent: true,
+            transcriptFields: ['Email']
+          }
+        ];
+
+        (window as any).embeddedservice_bootstrap.init(
+          '00DHs000008mOna',
+          'Bot',
+          'https://flexform.my.site.com/ESWBot1733322091417',
+          {
+            scrt2URL: 'https://flexform.my.salesforce-scrt.com',
+          }
+        );
+      } catch (err) {
+        console.error('Erro ao carregar o bot:', err);
+      }
+    };
+    document.body.appendChild(script);
+  }, [userName, userEmail]);
   
   const handleUserNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setuserName(event.target.value);
