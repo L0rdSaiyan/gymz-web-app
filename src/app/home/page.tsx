@@ -68,27 +68,6 @@ export default function Home() {
         />
         <Card day="Sábado" exercices={filterExercicesByDay("Sábado")} />
       </div>
-
-<script type='text/javascript'>
-	function initEmbeddedMessaging() {
-		try {
-			embeddedservice_bootstrap.settings.language = 'pt_BR'; // For example, enter 'en' or 'en-US'
-
-			embeddedservice_bootstrap.init(
-				'00DHs000008mOna',
-				'Bot',
-				'https://flexform.my.site.com/ESWBot1733322091417',
-				{
-					scrt2URL: 'https://flexform.my.salesforce-scrt.com'
-				}
-			);
-		} catch (err) {
-			console.error('Error loading Embedded Messaging: ', err);
-		}
-	};
-</script>
-<script type='text/javascript' src='https://flexform.my.site.com/ESWBot1733322091417/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-
       
     </div>
   );
